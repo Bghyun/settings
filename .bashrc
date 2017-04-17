@@ -3,9 +3,25 @@
 alias ls='ls --color=auto'
 alias vi='vim'
 
-# other stuff
-export DISPLAY=:0.0
+# terminal colors. example usage:
+#
+# echo -e "${RED_CLR}This text is in red${NULL_CLR}. This is not"
+# -e is required to interpret backslashes 
+export NULL_CLR='\033[0m'
+export RED_CLR='\033[0;31m'
+export BLU_CLR='\033[0;34m'
+export GRN_CLR='\033[0;32m'
+export CYN_CLR='\033[0;36m'
+export YLW_CLR='\033[0;33m'
 
+export LGRN_CLR='\033[1;32m'
+export LRED_CLR='\033[1;31m'
+export WHT_CLR='\033[1;37m'
+
+# other stuff
+export DISPLAY=":0.0"
+
+# initialize empty git repository
 function gitinit() {
 	if [ $# -ne 1 ]; then
 		echo 'Usage: gitinit <repository_name>'
@@ -27,7 +43,6 @@ function myip() {
 	return 0;
 }
 
-
 #
 # Echoes each path in environment variable PATH
 # in its own line for easy readability.
@@ -41,7 +56,6 @@ function echopath() {
 	IFS=$oldIFS
 	return 0;
 }
-
 
 # custom bashrc for host-dependent paths etc
 if [ -f ~/local/.bashrc ]; then
