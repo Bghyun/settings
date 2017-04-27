@@ -2,6 +2,7 @@
 # aliases 
 alias ls='ls --color=auto'
 alias vi='vim'
+alias tree='tree -C'
 
 # terminal colors. example usage:
 #
